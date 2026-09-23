@@ -1,7 +1,5 @@
 # Bug Diary
-
 ## Bug 1 — Incorrect order routing from substring matching
-
 ### Failure
 A TrailPlus return query containing the word "ordered" was incorrectly routed as an order-related request because the router used substring matching for the term "order".
 
@@ -14,10 +12,7 @@ Changed order-related keyword matching to use whole-word regular expressions so 
 ### Regression
 Added/updated routing tests and verified the full evaluation suite.
 
----
-
 ## Bug 2 — Incorrect evidence selection for TrailPlus returns
-
 ### Failure
 A TrailPlus return question could retrieve the generic standard returns policy instead of the TrailPlus policy.
 
@@ -30,10 +25,7 @@ Updated evidence selection to prefer the TrailPlus membership document when the 
 ### Regression
 Verified the TrailPlus evaluation case and full test suite.
 
----
-
 ## Bug 3 — Unfriendly order ETA date formatting
-
 ### Failure
 Order lookup responses exposed ISO-formatted dates such as `2026-08-22`.
 
@@ -46,10 +38,7 @@ Converted ISO dates into human-readable dates such as `August 22, 2026`.
 ### Regression
 Verified the shipped-order evaluation case.
 
----
-
 ## Bug 4 — Final-sale damaged-item exception
-
 ### Failure
 Final-sale restrictions and damaged-item exceptions require information from two separate policy documents.
 
@@ -62,10 +51,7 @@ Added targeted evidence selection for final-sale damaged/wrong-item questions an
 ### Regression
 Verified the final-sale damaged-item evaluation case.
 
----
-
 ## Bug 5 — Conflicting official product information
-
 ### Failure
 Two official knowledge-base documents contained conflicting dishwasher-safety instructions for the Breeze Tumbler.
 
