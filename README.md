@@ -116,6 +116,12 @@ The tested support questions returned the relevant policy information and associ
 
 For unsupported questions, I also checked that the agent does not use an unrelated retrieved document to produce an answer.
 
+## Evaluation
+
+The final evaluation passed 14 out of 15 provided evaluation cases.
+
+The only failing case was `unsupported-country`, where the agent did not retrieve `06-international-shipping.md` as expected.
+
 ## Known limitations
 
 - The order lookup data is mock data provided for the assignment.
