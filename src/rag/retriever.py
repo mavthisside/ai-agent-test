@@ -98,9 +98,23 @@ def retrieve(
             (chunk, final_score)
         )
 
+    print("\nRETRIEVAL SCORES:")
+    for chunk, score in scored_chunks:
+        print(score, chunk.metadata.get("heading"))
+
+    scored_chunks.append(
+    (chunk, final_score)
+        )
+
     scored_chunks.sort(
         key=lambda item: item[1],
         reverse=True,
     )
 
-    return scored_chunks[:top_k]
+    MIN_RELEVANCE_SCORE = 0.40
+
+    return [
+        item
+        for item in scored_chunks[:top_k]
+        if item[1] >= MIN_RELEVANCE_SCORE
+    ]
